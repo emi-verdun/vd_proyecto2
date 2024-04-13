@@ -3,46 +3,34 @@
   import {onMount} from "svelte"
 
   /* Array donde guardaremos la data */
-  let deportistas = []
+  let datos_morfi = []
 
-  /* 1. Escala para edades */
-  let grosor = d3.scaleLinear().range([5, 20])
+  /* 1. Escala par lugar de comida */
+  /*let colorLugar = d3.scaleOrdinal()
+    .domain(["Mingo", "Fud", "Green Bites", "El Rincón", "Havana", "Traigo de casa"])
+    .range(["#ff8c8c", "#ff814a", "#458330", "#71372a", "#ffc700", "#ff2f48"])
 
-  /* 2. Escala para genero */
-  let colorGenero = d3
-    .scaleOrdinal()
-    .domain(["F", "M"])
-    .range(["#ffc0cb", "#c0f9ff"])
+  /* 2. Escala para mejor café */
+  /*let colorCafe = d3.scaleOrdinal
+    .domain(["Havana", "Fud"])
+    .range(["#ffb700", "#71372a"])
 
-  /* 3. Escala para continentes */
-  let colorContinentes = d3
-    .scaleOrdinal()
-    .domain(["América", "África", "Asia", "Europa", "Oceanía"])
-    .range(["#ed334e", "#000000", "#fbb132", "#009fe3", "#00963f"])
+  /* 3. Escala para gaston en comida */
+  let gasto = d3.scaleLinear().range([0, 200])
 
-  /* 4. Escala para altura */
-  let radioAltura = d3.scaleRadial()
-
-  /* 5. Escala para medallas */
-  let colorMedalla = d3.scaleOrdinal()
-    .domain(["Oro", "Plata", "Bronce"])
-    .range(["gold", "silver", "brown"])
+  /* Creo que nada más necesita escala */
 
   onMount(() => {
-    d3.csv("./data/deportistas.csv", d3.autoType).then(data => {
+    d3.csv("./data/MorfiFacu-sheet.csv", d3.autoType).then(data => {
       console.log(data)
 
-      /* Actualizamos dominio con la data de edad */
-      let minMaxEdad = d3.extent(data, d => d.edad)
-      grosor = grosor.domain(minMaxEdad)
+      let MinMaxGasto = d3.extent(data, d => d.gastoPromedio)
+      gasto =gasto.domain(MinMaxGasto)
 
-      /* Actualizamos dominio y rango con la data de altura */
-      let minMaxAltura = d3.extent(data, d => d.altura)
-      radioAltura = radioAltura.domain(minMaxAltura).range([25, 50])
-
-      deportistas = data
+      datos_morfi = data
     })
   })
+
 </script>
 
 <main>
@@ -53,10 +41,11 @@
     <p class="bajada">Lugares más elegidos, habitos y puntuación del tostado de Mingo &#129386</p>
   </div>
 
+  
   <!-- Conedor de las entidades -->
-  <div class="container">
+  <!--<div class="container"> -->
     <!-- Iteramos la data para visualizar c/ entidad -->
-    {#each deportistas as dep}
+    <!--{#each deportistas as dep}
       <div class="person-container">
         <div class="medal"
           style="background-color: {colorMedalla(dep.medalla)}"
@@ -76,7 +65,7 @@
         </p>
       </div>
     {/each}
-  </div>
+  </div> -->
 </main>
 
 <style>
@@ -101,7 +90,7 @@
     text-align: center;
     margin: 10px;
   }
-  .headline b {
+  /*.headline b {
     display: block;
   }
   .container {
@@ -142,5 +131,5 @@
     font-weight: normal;
     text-align: center;
     margin-top: 5px;
-  }
+  }*/
 </style>
