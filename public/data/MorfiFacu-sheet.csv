@@ -1,4 +1,4 @@
-Marca temporal,Nombre,Edad,¿Cuántas veces por semana te quedas a comer en la facu?,¿Qué lugar preferís para comprar comida?,¿Cómo calificarías la atención?,Puntua del 1 al 5 el tostado de Mingo,¿Cuánto gastas en promedio por comida?,Mejor café
+Marca temporal,nombre,edad,cantDias,lugar,ratingServicio,tostadoMingo,gastoPromedio,mejorCafe
 27/3/2024 15:17:39,Gonzalo,21,0,Mingo,4,5,2000,Havana
 27/3/2024 15:18:19,Mariano Sanson,19,0,Fud,4,4,5500,Havana
 27/3/2024 15:20:33,Estanislao,19,3,Fud,4,4,4000,Havana
