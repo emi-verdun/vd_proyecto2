@@ -47,12 +47,10 @@
 
 <main>
   <div class="header">
-    <img src="/images/olympics-logo.png" width="100" alt="anillos" />
     <h3 class="headline">
-      <b>Triunfos Olímpicos</b>
-      Medallas, alturas y continentes
+      Morfi en la facu
     </h3>
-    <p class="bajada">Explorando los logros olímpicos a través de datos</p>
+    <p class="bajada">Lugares más elegidos, habitos y puntuación del tostado de Mingo &#129386</p>
   </div>
 
   <!-- Conedor de las entidades -->
@@ -91,9 +89,9 @@
     margin-bottom: 80px;
   }
   .headline {
-    font-size: 30px;
-    line-height: 1.2;
-    font-weight: normal;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: bold;
     text-align: center;
     margin: 20px;
   }
