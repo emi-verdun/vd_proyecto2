@@ -6,7 +6,7 @@
   let datos_morfi = []
 
   /* 1. Escala par lugar de comida */
-  /*let colorLugar = d3.scaleOrdinal()
+  let colorLugar = d3.scaleOrdinal()
     .domain(["Mingo", "Fud", "Green Bites", "El Rincón", "Havana", "Traigo de casa"])
     .range(["#ff8c8c", "#ff814a", "#458330", "#71372a", "#ffc700", "#ff2f48"])
 
@@ -43,29 +43,56 @@
 
   
   <!-- Conedor de las entidades -->
-  <!--<div class="container"> -->
+  <div class="container">
     <!-- Iteramos la data para visualizar c/ entidad -->
-    <!--{#each deportistas as dep}
-      <div class="person-container">
-        <div class="medal"
-          style="background-color: {colorMedalla(dep.medalla)}"
-          ></div>
-        <div
-          class="person"
-          style="border-width: {grosor(dep.edad)}px; 
-        background-color:{colorGenero(dep.genero)}; 
-        width: {2 * radioAltura(dep.altura)}px; 
-        height: {2 * radioAltura(dep.altura)}px; 
-        border-color: {colorContinentes(dep.continente)}"
-        ></div>
-        <p class="name">
-          <b>{dep.nombre}</b>
-          <br />
-          {dep.continente}
-        </p>
+    <!--{#each datos_morfi as sangu}-->
+      <div class="comida-container">
+
+        <div class="sanguches">
+
+          <!--{#if sangu.cantDias >= 1}-->
+            
+              <div class="pan"
+                style="background-color: #fffbd6;
+                width: 50px;
+                height: 16px;
+                display: flex;
+                justify-content:center;
+                align-items: center;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #ffe6b6"
+              >
+                <div class="relleno">
+                  <div class="fill_1"
+                    style="background-color: red;
+                    height: 3px;
+                    width: 50px;" 
+                  ></div>
+                  <div class="fill_2"
+                    style="background-color: yellow;
+                    height: 3px;
+                    width: 50px;" 
+                  ></div>
+                </div>
+                
+              </div> 
+            
+
+        </div>
+
+        <!--<div class="plato">
+        </div>
+
+        <div class="cafe">
+        </div>
+
+        <div class="servicio">
+        </div>-->
+
       </div>
-    {/each}
-  </div> -->
+    <!--{/each}-->
+  </div> 
 </main>
 
 <style>
