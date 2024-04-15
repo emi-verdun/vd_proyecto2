@@ -18,6 +18,11 @@
   /* 3. Escala para gaston en comida */
   let gasto = d3.scaleLinear().range([0, 200])
 
+  /* 4. Escala para cantidad de días que come en la facultad */
+  let cantDias = d3.scaleOrdinal()
+    .domain(["0","1","2","3","4","5"])
+    .range([1,1,2,3,4,5])
+
   /* Creo que nada más necesita escala */
 
   onMount(() => {
@@ -25,13 +30,14 @@
       console.log(data)
 
       let MinMaxGasto = d3.extent(data, d => d.gastoPromedio)
-      gasto =gasto.domain(MinMaxGasto)
+      gasto = gasto.domain(MinMaxGasto)
 
       datos_morfi = data
     })
   })
 
 </script>
+
 
 <main>
   <div class="header">
@@ -44,14 +50,16 @@
   
   <!-- Conedor de las entidades -->
   <div class="container">
-    <!-- Iteramos la data para visualizar c/ entidad -->
-    <!--{#each datos_morfi as sangu}-->
+
+    {#each datos_morfi as sangu}
+
+      <!-- Contenedor comida de cada persona -->
       <div class="comida-container">
 
         <div class="sanguches">
-
-          <!--{#if sangu.cantDias >= 1}-->
-            
+          
+          {#each d3.range(1, 6) as n}
+            {#if n <= 5} <!-- No me deja usar {cantDias(sangu.cantDias)}-->
               <div class="pan"
                 style="background-color: #fffbd6;
                 width: 50px;
@@ -63,9 +71,10 @@
                 border-width: 1px;
                 border-color: #ffe6b6"
               >
+              
                 <div class="relleno">
                   <div class="fill_1"
-                    style="background-color: red;
+                    style="background-color: {colorLugar(sangu.lugar)};
                     height: 3px;
                     width: 50px;" 
                   ></div>
@@ -76,24 +85,36 @@
                   ></div>
                 </div>
                 
-              </div> 
-            
+              </div>
+            {/if} 
+          {/each}
 
         </div>
 
-        <!--<div class="plato">
+        <div class="plato">
+          <div 
+            style= "background-color: grey;
+            width: 80px;
+            height: 5px"
+          ></div> 
+          <div 
+            style = "background-color: grey;
+            width: 50px;
+            height: 5px"
+          ></div>
         </div>
 
-        <div class="cafe">
+        <!--<div class="cafe">
         </div>
 
         <div class="servicio">
         </div>-->
 
       </div>
-    <!--{/each}-->
+    {/each}
   </div> 
 </main>
+
 
 <style>
   .header {
@@ -103,22 +124,25 @@
     flex-direction: column;
     margin-top: 50px;
     margin-bottom: 80px;
+    background-color: whitesmoke;
   }
   .headline {
     font-size: 40px;
+    font-family: Passion One;
+    text-transform: uppercase;
+    word-spacing: 1px;
     line-height: 1;
-    font-weight: bold;
+    font-weight: normal;
     text-align: center;
     margin: 20px;
   }
   .bajada {
     font-size: 18px;
+    font-family: sans-serif;
     font-weight: normal;
     text-align: center;
-    margin: 10px;
-  }
-  /*.headline b {
-    display: block;
+    margin: 5px;
+    margin-bottom: 20px;
   }
   .container {
     display: flex;
@@ -126,18 +150,17 @@
     align-items: end;
     margin: auto;
     flex-wrap: wrap;
-    max-width: 1000px;
-    gap: 30px;
+    gap: 40px;
     margin-bottom: 100px;
   }
-  .person-container {
+  .comida-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     flex: 180px 0 0;
   }
-  .person {
+  /*.person {
     width: 100px;
     height: 100px;
     border: 10px solid black;
