@@ -20,7 +20,7 @@
 
   /* 4. Escala para cantidad de días que come en la facultad */
   let cantDias = d3.scaleOrdinal()
-    .domain(["0","1","2","3","4","5"])
+    .domain([0,1,2,3,4,5])
     .range([1,1,2,3,4,5])
 
   /* Creo que nada más necesita escala */
@@ -59,7 +59,7 @@
         <div class="sanguches">
           
           {#each d3.range(1, 6) as n}
-            {#if n <= 5} <!-- No me deja usar {cantDias(sangu.cantDias)}-->
+            {#if n <= [cantDias(sangu.cantDias)]} <!-- No me deja usar {cantDias(sangu.cantDias)}-->
               <div class="pan"
                 style="background-color: #fffbd6;
                 width: 50px;
