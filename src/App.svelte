@@ -91,17 +91,20 @@
 
         </div>
 
-        <div class="plato">
+        <div class="plato"
+          style ="display:flex;
+          flex-direction: column;
+          align-items: center">
           <div 
             style= "background-color: grey;
             width: 80px;
             height: 5px"
-          ></div> 
+          ></div>
           <div 
             style = "background-color: grey;
-            width: 50px;
+            width: 60px;
             height: 5px"
-          ></div>
+          ></div> 
         </div>
 
         <!--<div class="cafe">
