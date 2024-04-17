@@ -60,9 +60,13 @@
       Morfi en la Facu
     </h3>
     <p class="bajada">Lugares más elegidos, habitos y puntuación del tostado de Mingo &#129386</p>
+    <div class="skewed"></div>
   </div>
 
-  
+  <div class="linea">
+    0
+  </div>
+
   <!-- Conedor de las entidades -->
   <div class="container">
 
@@ -134,13 +138,47 @@
       </div>
     {/each}
 
-  </div> 
+  </div>
+  
+  <div class="linea">
+    5000
+  </div>
+
 </main>
 
 
 <style>
 
+.skewed {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 280px;
+    z-index: 0;
+    background: linear-gradient(0deg, rgba(255, 0, 0, 0.389) 15px, transparent 15px), linear-gradient(90deg, rgba(255, 0, 0, 0.5) 15px, transparent 15px), #FFF;
+    background-size: 35px 35px;
+    
+  }
+
+  .linea {
+    display: flex;
+    align-items: center;
+    --linea-gap: 8px;
+  }
+  .linea::after {
+    flex: 1;
+    content: '';
+    padding: 1px;
+    background-color: rgba(174, 174, 174, 0.3);
+    margin: 1px;
+    margin-left: var(--linea-gap);
+  }
+  
   .header {
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,15 +188,17 @@
   }
 
   .headline {
+    z-index: 2;
     font-size: 50px;
-    font-family: "Ojuju";
+    font-family: Ojuju;
     line-height: 1;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
     margin: 20px;
   }
 
   .bajada {
+    z-index: 2;
     font-size: 18px;
     font-family: sans-serif;
     font-weight: bold 700;
