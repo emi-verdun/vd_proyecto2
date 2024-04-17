@@ -10,7 +10,7 @@
   /* 1. Escala par lugar de comida */
   let colorLugar = d3.scaleOrdinal()
     .domain(["Mingo", "Fud", "Green Bites", "El Rincon", "Havana", "Traigo de casa"])
-    .range(["#ff8c8c", "#ff814a", "#458330", "#71372a", "#ffc700", "#ff2f48"])
+    .range(["#ff8c8c", "#458330", "#ff814a", "#71372a", "#ffc700", "#ff2f48"])
 
   /* 2. Escala para mejor café */ /*NO SE USA, NO DEJA USARLO CON SVG EN ESTE ARCHIVO, BORRA LA PAGINA*/
   /*let colorCafe = d3.scaleOrdinal
@@ -70,10 +70,10 @@
 
       <!-- Contenedor comida de cada persona -->
       <div class="comida-container">
-
         <div class="sanguches">
+          <div class="no_plato">  
           {#each d3.range(1, 6) as n}
-            {#if n <= [cantDias(sangu.cantDias)]}
+              {#if n <= [cantDias(sangu.cantDias)]}
 
               <div class="pan">
                 <div class="relleno">
@@ -92,29 +92,31 @@
 
             {/if} 
           {/each}
-        </div>
+          </div>
+        
 
-        <div class="plato"
-          style ="display:flex;
-          flex-direction: column;
-          align-items: center">
-          <div 
-            style= "background-color: grey;
-            width: 80px;
-            height: 5px"
-          ></div>
-          <div 
-            style = "background-color: grey;
-            width: 60px;
-            height: 5px"
-          ></div> 
+          <div class="plato"
+            style ="display:flex;
+            flex-direction: column;
+            align-items: center">
+            <div 
+              style= "background-color: grey;
+              width: 80px;
+              height: 5px"
+            ></div>
+            <div 
+              style = "background-color: grey;
+              width: 60px;
+              height: 5px"
+            ></div> 
+          </div>
         </div>
-
+        
         <div class="cafe">
           {#if sangu.mejorCafe == 'Havana'}
-            <img style= "height: 45px" src="/images/cafeHavanna.svg" alt="Café de Havanna">
+            <img style= "height: 40px" src="/images/cafeHavanna.svg" alt="Café de Havanna">
           {:else}
-            <img style= "height: 45px" src="/images/cafeFud.svg" alt="Café de Fud">
+            <img style= "height: 40px" src="/images/cafeFud.svg" alt="Café de Fud">
           {/if}
         </div>
 
@@ -129,9 +131,7 @@
             <img style= "height: 35px" src="/images/servicio5.svg" alt="Rating de Servicio = 5">
           {/if}
         </div>
-
       </div>
-
     {/each}
 
   </div> 
@@ -151,9 +151,9 @@
 
   .headline {
     font-size: 50px;
-    font-family: Ojuju;
+    font-family: "Ojuju";
     line-height: 1;
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
     margin: 20px;
   }
@@ -169,21 +169,32 @@
 
   .container {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: end;
     margin: auto;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 20px;
     margin-bottom: 100px;
+    border:solid 1px red;
   }
 
   .comida-container {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
+    flex: 180px 0 0;
+    border:solid 1px;
+    height: 100px;
+  }
+  .sanguches{
+    display:flex;
     flex-direction: column;
     align-items: center;
-    flex: 180px 0 0;
+    position: absolute;
+    margin-left: 40px
   }
+
   .pan {
     background-color: #fffbd6;
     width: 50px;
@@ -195,5 +206,16 @@
     border-width: 1px;
     border-color: #ffe6b6
   }
+  
+  .cafe{
+    position: absolute;
+    margin-right: 90px;
+    margin-bottom: -6px;
+  }
 
+  .servicio{
+    position: absolute;
+    margin-left: 90px;
+    margin-bottom: 60px;
+   }
 </style>
