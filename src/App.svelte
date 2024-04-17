@@ -57,7 +57,7 @@
 <main>
   <div class="header">
     <h3 class="headline">
-      Morfi en la facu
+      Morfi en la Facu
     </h3>
     <p class="bajada">Lugares más elegidos, habitos y puntuación del tostado de Mingo &#129386</p>
   </div>
@@ -147,16 +147,13 @@
     flex-direction: column;
     margin-top: 50px;
     margin-bottom: 80px;
-    background-color: whitesmoke;
   }
 
   .headline {
-    font-size: 40px;
-    font-family: Passion One;
-    text-transform: uppercase;
-    word-spacing: 1px;
+    font-size: 50px;
+    font-family: Ojuju;
     line-height: 1;
-    font-weight: normal;
+    font-weight: 700;
     text-align: center;
     margin: 20px;
   }
@@ -164,7 +161,7 @@
   .bajada {
     font-size: 18px;
     font-family: sans-serif;
-    font-weight: normal;
+    font-weight: bold 700;
     text-align: center;
     margin: 5px;
     margin-bottom: 20px;
