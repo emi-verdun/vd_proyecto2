@@ -109,11 +109,16 @@
         </div>
         
         <div class="cafe">
-          {#if sangu.mejorCafe == 'Havana'}
-            <img style= "height: 50px" src="/images/cafeHavanna.svg" alt="Café de Havanna">
-          {:else}
-            <img style= "height: 50px" src="/images/cafeFud.svg" alt="Café de Fud">
-          {/if}
+          <div>
+            <div class = "cafe-wrapper">
+              <div class = "cafe-column" style="height:{gasto(sangu.gastoPromedio)}%;"></div>
+              {#if sangu.mejorCafe == 'Havana'}  
+                <img id="img_h" style= "height: 50px" src="./images/cafe_havana2.svg" alt="Café de Havanna">
+              {:else}
+                <img id ="img_f" style = "height: 50px" src="./images/cafe_fud2.svg" alt="Café de Fud">
+              {/if}
+            </div>
+          </div>
         </div>
 
         <div class="servicio">
@@ -233,15 +238,37 @@
     border-color: #ffe6b6
   }
   
-  .cafe{
-    position: absolute;
-    margin-right: 100px;
-    margin-bottom: -6px;
-  }
-
   .servicio{
     position: absolute;
     margin-left: 90px;
     margin-bottom: 60px;
    }
+
+   .cafe{
+    display:flex;
+    position: absolute;
+    margin-right: 100px;
+    margin-bottom: -6px;
+  }
+
+   .cafe-wrapper {
+    position: relative;
+    width: 42.5px;
+    height: 50px;
+    z-index: 1;
+  }
+  .cafe-column{
+    position: absolute;
+    height: 50%;
+    left: 14%;
+    right: 10%;
+    bottom: 5%;
+    background-color: lightblue;
+    z-index: 1;
+  }
+
+  #img_h, #img_f {
+    position:absolute;
+    z-index: 20;
+  }
 </style>
