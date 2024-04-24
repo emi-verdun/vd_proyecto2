@@ -12,32 +12,27 @@
     .domain(["Mingo", "Fud", "Green Bites", "El Rincon", "Havana", "Traigo de casa"])
     .range(["#ff8c8c", "#458330", "#ff814a", "#71372a", "#ffc700", "#ff2f48"])
 
-  /* 2. Escala para mejor café */ /*NO SE USA, NO DEJA USARLO CON SVG EN ESTE ARCHIVO, BORRA LA PAGINA*/
-  /*let colorCafe = d3.scaleOrdinal
-    .domain(["Havana", "Fud"])
-    .range(["#ffb700", "#71372a"])
-
-  /* 3. Escala para gaston en comida */
+  /* 2. Escala para gaston en comida */
   let gasto = d3.scaleLinear().range([0, 200])
 
-  /* 4. Escala para cantidad de días que come en la facultad */
+  /* 3. Escala para cantidad de días que come en la facultad */
   let cantDias = d3.scaleOrdinal()
     .domain([0,1,2,3,4,5])
     .range([1,1,2,3,4,5])
 
-  /* 5. Escala para rating de servicio */
+  /* 4. Escala para rating de servicio */
   let servicio = d3.scaleOrdinal()
     .domain([0,1,2,3,4,5])
     .range([1,1,2,3,4,5])
   
-  /* 6. Escala para rating del tostado de Mingo */
+  /* 5. Escala para rating del tostado de Mingo */
   let tostadoM1 = d3.scaleBand()
     .domain([0,1,2,3,4,5])
-    .range([30, 80])
+    .range([30, 100])
   
   let tostadoM2 = d3.scaleBand()
   .domain([0,1,2,3,4,5])
-  .range([10, 60])
+  .range([15, 60])
 
 
   onMount(() => {
@@ -105,12 +100,12 @@
             align-items: center">
             <div 
               style= "background-color: grey;
-              width: 80px;
+              width: {tostadoM1(sangu.tostadoMingo)}px;
               height: 5px"
             ></div>
             <div 
               style = "background-color: grey;
-              width: 60px;
+              width: {tostadoM2(sangu.tostadoMingo)};
               height: 5px"
             ></div> 
           </div>
