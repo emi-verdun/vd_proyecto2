@@ -51,10 +51,12 @@
 
 <main>
   <div class="header">
-    <h3 class="headline">
-      Morfi en la Facu
-    </h3>
-    <p class="bajada">Lugares más elegidos, habitos y puntuación del tostado de Mingo &#129386</p>
+    <div class="header2">
+      <h3 class="headline">
+        Morfi en la Facu
+      </h3>
+      <p class="bajada">Lugares más elegidos, habitos y puntuación del tostado de Mingo &#129386</p>
+    </div>
     <div class="skewed"></div>
   </div>
 
@@ -105,7 +107,7 @@
             ></div>
             <div 
               style = "background-color: grey;
-              width: {tostadoM2(sangu.tostadoMingo)};
+              width: {tostadoM2(sangu.tostadoMingo)}px;
               height: 5px"
             ></div> 
           </div>
@@ -145,16 +147,17 @@
 <style>
 
 .skewed {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 280px;
-    z-index: 0;
-    background: linear-gradient(0deg, rgba(255, 0, 0, 0.389) 15px, transparent 15px), linear-gradient(90deg, rgba(255, 0, 0, 0.5) 15px, transparent 15px), #FFF;
-    background-size: 35px 35px;
+  z-index:2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 280px;
+  z-index: 0;
+  background: linear-gradient(0deg, rgba(255, 0, 0, 0.389) 15px, transparent 15px), linear-gradient(90deg, rgba(255, 0, 0, 0.5) 15px, transparent 15px), #FFF;
+  background-size: 35px 35px;
     
   }
 
@@ -172,6 +175,12 @@
     margin-left: var(--linea-gap);
   }
   
+  .header2 {
+    background-color:whitesmoke; 
+    z-index:3;
+    width: 700px;
+  }
+
   .header {
     z-index: 1;
     display: flex;
@@ -183,7 +192,7 @@
   }
 
   .headline {
-    z-index: 2;
+    z-index: 4; 
     font-size: 50px;
     font-family: Ojuju;
     line-height: 1;
@@ -193,7 +202,7 @@
   }
 
   .bajada {
-    z-index: 2;
+    z-index: 4;
     font-size: 18px;
     font-family: sans-serif;
     font-weight: bold 700;
@@ -221,6 +230,7 @@
     flex: 180px 0 0;
     border:solid 1px;
     height: 100px;
+    margin-bottom: 40px;
   }
   .sanguches{
     display:flex;
