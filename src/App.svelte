@@ -13,7 +13,7 @@
     .range(["#ff8c8c", "#458330", "#ff814a", "#71372a", "#ffc700", "#ff2f48"])
 
   /* 2. Escala para gaston en comida */
-  let gasto = d3.scaleLinear().range([0, 200])
+  let gasto = d3.scaleLinear().range([0, 100])
 
   /* 3. Escala para cantidad de días que come en la facultad */
   let cantDias = d3.scaleOrdinal()
@@ -33,7 +33,6 @@
   let tostadoM2 = d3.scaleBand()
   .domain([0,1,2,3,4,5])
   .range([15, 80])
-
 
   onMount(() => {
     d3.csv("./data/MorfiFacu-sheet.csv", d3.autoType).then(data => {
