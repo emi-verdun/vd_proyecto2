@@ -28,11 +28,11 @@
   /* 5. Escala para rating del tostado de Mingo */
   let tostadoM1 = d3.scaleBand()
     .domain([0,1,2,3,4,5])
-    .range([30, 100])
+    .range([30, 120])
   
   let tostadoM2 = d3.scaleBand()
   .domain([0,1,2,3,4,5])
-  .range([15, 60])
+  .range([15, 80])
 
 
   onMount(() => {
@@ -60,10 +60,6 @@
     <div class="skewed"></div>
   </div>
 
-  <div class="linea">
-    0
-  </div>
-
   <!-- Conedor de las entidades -->
   <div class="container">
 
@@ -80,13 +76,13 @@
                 <div class="relleno">
                   <div class="fill_1"
                     style="background-color: {colorLugar(sangu.lugar)};
-                    height: 3px;
-                    width: 50px;" 
+                    height: 3.5px;
+                    width: 60px;" 
                   ></div>
                   <div class="fill_2"
                     style="background-color: yellow;
-                    height: 3px;
-                    width: 50px;" 
+                    height: 3.5px;
+                    width: 60px;" 
                   ></div>
                 </div>
               </div>
@@ -103,21 +99,21 @@
             <div 
               style= "background-color: grey;
               width: {tostadoM1(sangu.tostadoMingo)}px;
-              height: 5px"
+              height: 7px"
             ></div>
             <div 
               style = "background-color: grey;
               width: {tostadoM2(sangu.tostadoMingo)}px;
-              height: 5px"
+              height: 7px"
             ></div> 
           </div>
         </div>
         
         <div class="cafe">
           {#if sangu.mejorCafe == 'Havana'}
-            <img style= "height: 40px" src="/images/cafeHavanna.svg" alt="Café de Havanna">
+            <img style= "height: 50px" src="/images/cafeHavanna.svg" alt="Café de Havanna">
           {:else}
-            <img style= "height: 40px" src="/images/cafeFud.svg" alt="Café de Fud">
+            <img style= "height: 50px" src="/images/cafeFud.svg" alt="Café de Fud">
           {/if}
         </div>
 
@@ -125,20 +121,16 @@
           {#if 1 == [servicio(sangu.ratingServicio)]}
             <img style= "height: 30px" src="/images/servicio1.svg" alt="Rating de Servicio = 0-1">
           {:else if 2 == [servicio(sangu.ratingServicio)]}
-            <img style= "height: 12px" src="/images/servicio2.svg" alt="Rating de Servicio = 2">
+            <img style= "height: 18px" src="/images/servicio2.svg" alt="Rating de Servicio = 2">
           {:else if 4 == [servicio(sangu.ratingServicio)]}
-            <img style= "height: 25px" src="/images/servicio4.svg" alt="Rating de Servicio = 4">
+            <img style= "height: 30px" src="/images/servicio4.svg" alt="Rating de Servicio = 4">
           {:else if 5 == [servicio(sangu.ratingServicio)]}
-            <img style= "height: 35px" src="/images/servicio5.svg" alt="Rating de Servicio = 5">
+            <img style= "height: 40px" src="/images/servicio5.svg" alt="Rating de Servicio = 5">
           {/if}
         </div>
       </div>
     {/each}
 
-  </div>
-  
-  <div class="linea">
-    5000
   </div>
 
 </main>
@@ -160,23 +152,9 @@
   background-size: 35px 35px;
     
   }
-
-  .linea {
-    display: flex;
-    align-items: center;
-    --linea-gap: 8px;
-  }
-  .linea::after {
-    flex: 1;
-    content: '';
-    padding: 1px;
-    background-color: rgba(174, 174, 174, 0.3);
-    margin: 1px;
-    margin-left: var(--linea-gap);
-  }
   
   .header2 {
-    background-color:whitesmoke; 
+    background-color:rgba(74, 74, 74, 1); 
     z-index:3;
     width: 700px;
   }
@@ -194,6 +172,7 @@
   .headline {
     z-index: 4; 
     font-size: 50px;
+    color: white;
     font-family: Ojuju;
     line-height: 1;
     font-weight: 700;
@@ -203,6 +182,7 @@
 
   .bajada {
     z-index: 4;
+    color: white;
     font-size: 18px;
     font-family: sans-serif;
     font-weight: bold 700;
@@ -219,7 +199,10 @@
     margin: auto;
     flex-wrap: wrap;
     gap: 20px;
+    row-gap: 40px;
     margin-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
     /*border:solid 1px red;*/
   }
 
@@ -228,22 +211,21 @@
     justify-content: center;
     align-items: flex-end;
     flex: 180px 0 0;
-    border:solid 1px;
-    height: 100px;
-    margin-bottom: 40px;
+    /*border:solid 1px;*/
+    height: 150px;
   }
   .sanguches{
     display:flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    margin-left: 40px
+    margin-left: 50px
   }
 
   .pan {
     background-color: #fffbd6;
-    width: 50px;
-    height: 16px;
+    width: 60px;
+    height: 20px;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -254,7 +236,7 @@
   
   .cafe{
     position: absolute;
-    margin-right: 90px;
+    margin-right: 100px;
     margin-bottom: -6px;
   }
 
