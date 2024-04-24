@@ -216,7 +216,7 @@
     flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 100px;
-    border:solid 1px red;
+    /*border:solid 1px red;*/
   }
 
   .comida-container {
