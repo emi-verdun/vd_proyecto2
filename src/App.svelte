@@ -96,12 +96,12 @@
             flex-direction: column;
             align-items: center">
             <div 
-              style= "background-color: grey;
+              style= "background-color: #bfc0c0;
               width: {tostadoM1(sangu.tostadoMingo)}px;
               height: 7px"
             ></div>
             <div 
-              style = "background-color: grey;
+              style = "background-color: #bfc0c0;
               width: {tostadoM2(sangu.tostadoMingo)}px;
               height: 7px"
             ></div> 
