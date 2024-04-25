@@ -137,6 +137,12 @@
 
   </div>
 
+  <div class="info">
+    <div class="mesa"></div>
+    <div class="pata uno"></div>
+    <div class="pata dos"></div>
+  </div>
+
 </main>
 
 
@@ -271,4 +277,33 @@
     position:absolute;
     z-index: 20;
   }
+
+  .info {
+    display: flex;
+    justify-content: center;
+    margin-top: 400px;
+    margin-bottom: 350px;
+  }
+  .mesa {
+    background-color: saddlebrown;
+    width: 1200px;
+    height: 40px;
+  }
+
+  .pata {
+    background-color: saddlebrown;
+    height: 300px;
+    width: 40px;
+  }
+
+  .uno {
+    position: absolute;
+    margin-left: 1180px;
+  }
+
+  .dos {
+    position: absolute;
+    margin-right: 1180px;
+  }
+
 </style>
