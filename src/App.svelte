@@ -13,7 +13,7 @@
     .range(["#ff8c8c", "#458330", "#ff814a", "#71372a", "#ffc700", "#ff2f48"])
 
   /* 2. Escala para gaston en comida */
-  let gasto = d3.scaleLinear().range([0, 100])
+  let gasto = d3.scaleLinear([0, 6000],[0, 100])
 
   /* 3. Escala para cantidad de días que come en la facultad */
   let cantDias = d3.scaleOrdinal()
@@ -38,8 +38,8 @@
     d3.csv("./data/MorfiFacu-sheet.csv", d3.autoType).then(data => {
       console.log(data)
 
-      let MinMaxGasto = d3.extent(data, d => d.gastoPromedio)
-      gasto = gasto.domain(MinMaxGasto)
+      //let MinMaxGasto = d3.extent(data, d => d.gastoPromedio)
+      //gasto = gasto.domain(MinMaxGasto)
 
       datos_morfi = data
     })
@@ -208,11 +208,11 @@
     align-items: end;
     margin: auto;
     flex-wrap: wrap;
-    gap: 20px;
+    column-gap: 40px;
     row-gap: 40px;
     margin-bottom: 100px;
-    margin-right: 100px;
-    margin-left: 100px;
+    margin-right: 80px;
+    margin-left: 80px;
     /*border:solid 1px red;*/
   }
 
@@ -253,7 +253,7 @@
    .cafe{
     display:flex;
     position: absolute;
-    margin-right: 100px;
+    margin-right: 120px;
     margin-bottom: -6px;
   }
 
@@ -269,7 +269,7 @@
     left: 14%;
     right: 10%;
     bottom: 5%;
-    background-color: lightblue;
+    background-color: #2F1D12;
     z-index: 1;
   }
 
