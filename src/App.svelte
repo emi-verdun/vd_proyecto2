@@ -25,6 +25,8 @@
     .domain([0,1,2,3,4,5])
     .range([1,1,2,3,4,5])
   
+    let gap = (5-1)/6
+  
   /* 5. Escala para rating del tostado de Mingo */
   let tostadoM1 = d3.scaleBand()
     .domain([0,1,2,3,4,5])
@@ -37,9 +39,6 @@
   onMount(() => {
     d3.csv("./data/MorfiFacu-sheet.csv", d3.autoType).then(data => {
       console.log(data)
-
-      //let MinMaxGasto = d3.extent(data, d => d.gastoPromedio)
-      //gasto = gasto.domain(MinMaxGasto)
 
       datos_morfi = data
     })
@@ -59,7 +58,7 @@
     <div class="skewed"></div>
   </div>
 
-  <!-- Conedor de las entidades -->
+  <!-- Contenedor de las entidades -->
   <div class="container">
 
     {#each datos_morfi as sangu}
@@ -121,11 +120,13 @@
           </div>
         </div>
 
-        <div class="servicio">
+        <div class="servicio" style="margin-bottom: {60+(cantDias(sangu.cantDias)*gap)*20}px">
           {#if 1 == [servicio(sangu.ratingServicio)]}
             <img style= "height: 30px" src="/images/servicio1.svg" alt="Rating de Servicio = 0-1">
           {:else if 2 == [servicio(sangu.ratingServicio)]}
-            <img style= "height: 18px" src="/images/servicio2.svg" alt="Rating de Servicio = 2">
+            <img style= "height: 30px" src="/images/servicio1.svg" alt="Rating de Servicio = 2">
+          {:else if 3 == [servicio(sangu.ratingServicio)]}
+            <img style= "height: 16px" src="/images/servicio2.svg" alt="Rating de Servicio = 3">
           {:else if 4 == [servicio(sangu.ratingServicio)]}
             <img style= "height: 30px" src="/images/servicio4.svg" alt="Rating de Servicio = 4">
           {:else if 5 == [servicio(sangu.ratingServicio)]}
@@ -204,26 +205,27 @@
   .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: end;
     margin: auto;
     flex-wrap: wrap;
-    column-gap: 40px;
+    column-gap: 100px;
     row-gap: 40px;
     margin-bottom: 100px;
-    margin-right: 80px;
-    margin-left: 80px;
+    margin-right: 120px;
+    margin-left: 120px;
     /*border:solid 1px red;*/
   }
 
   .comida-container {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     flex: 180px 0 0;
-    /*border:solid 1px;*/
+    border:solid 1px;
     height: 150px;
   }
+
   .sanguches{
     display:flex;
     flex-direction: column;
@@ -247,7 +249,6 @@
   .servicio{
     position: absolute;
     margin-left: 90px;
-    margin-bottom: 60px;
    }
 
    .cafe{
