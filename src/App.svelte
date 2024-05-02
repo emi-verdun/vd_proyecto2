@@ -1,6 +1,7 @@
 <script>
   import * as d3 from "d3"
   import {onMount} from "svelte"
+  import Referencias from "./referencias.svelte"
 
   
   /* Array donde guardaremos la data */
@@ -65,6 +66,7 @@
 
       <!-- Contenedor comida de cada persona -->
       <div class="comida-container">
+        <div class="mantel"></div>
         <div class="sanguches">
           <div class="no_plato">  
           {#each d3.range(1, 6) as n}
@@ -124,9 +126,7 @@
           {#if 1 == [servicio(sangu.ratingServicio)]}
             <img style= "height: 30px" src="/images/servicio1.svg" alt="Rating de Servicio = 0-1">
           {:else if 2 == [servicio(sangu.ratingServicio)]}
-            <img style= "height: 30px" src="/images/servicio1.svg" alt="Rating de Servicio = 2">
-          {:else if 3 == [servicio(sangu.ratingServicio)]}
-            <img style= "height: 16px" src="/images/servicio2.svg" alt="Rating de Servicio = 3">
+            <img style= "height: 16px" src="/images/servicio2.svg" alt="Rating de Servicio = 2">
           {:else if 4 == [servicio(sangu.ratingServicio)]}
             <img style= "height: 30px" src="/images/servicio4.svg" alt="Rating de Servicio = 4">
           {:else if 5 == [servicio(sangu.ratingServicio)]}
@@ -135,6 +135,13 @@
         </div>
       </div>
     {/each}
+
+  </div>
+
+
+  <!--ARMAMOS MENU DE REFERENCIAS-->
+  <div class="referencias_menu">
+    <Referencias />
 
   </div>
 
@@ -165,7 +172,7 @@
   }
   
   .header2 {
-    background-color:rgba(74, 74, 74, 1); 
+    background-color:#4a4a4a; 
     z-index:3;
     width: 700px;
   }
@@ -224,7 +231,18 @@
     flex: 180px 0 0;
     border:solid 1px;
     height: 150px;
+    background-color: grey;
   }
+
+  .mantel {
+    position: absolute;
+    height: 20px;
+    width: 180px;
+    margin-bottom: -6px;
+    background: linear-gradient(0deg, rgba(255, 0, 0, 0.389) 15px, transparent 15px), linear-gradient(90deg, rgba(255, 0, 0, 0.5) 15px, transparent 15px), #FFF;
+    background-size: 10px 10px;
+  }
+
 
   .sanguches{
     display:flex;
@@ -235,7 +253,7 @@
   }
 
   .pan {
-    background-color: #fffbd6;
+    background-color: #f3efc7;
     width: 60px;
     height: 20px;
     display: flex;
@@ -243,7 +261,7 @@
     align-items: center;
     border-style: solid;
     border-width: 1px;
-    border-color: #ffe6b6
+    border-color: #f7c871
   }
   
   .servicio{
