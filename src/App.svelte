@@ -14,7 +14,7 @@
     .range(["#ff8c8c", "#458330", "#ff814a", "#71372a", "#ffc700", "#ff2f48"])
 
   /* 2. Escala para gaston en comida */
-  let gasto = d3.scaleLinear([0, 6000],[0, 100])
+  let gasto = d3.scaleLinear([0, 6500],[0, 100])
 
   /* 3. Escala para cantidad de días que come en la facultad */
   let cantDias = d3.scaleOrdinal()
@@ -184,7 +184,7 @@
     align-items: center;
     flex-direction: column;
     margin-top: 50px;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
   }
 
   .headline {
@@ -229,18 +229,21 @@
     justify-content: center;
     align-items: flex-end;
     flex: 180px 0 0;
-    border:solid 1px;
+    /*border:solid 1px;*/
     height: 150px;
-    background-color: grey;
+    /*background-color: grey;*/
   }
 
   .mantel {
     position: absolute;
     height: 20px;
     width: 180px;
-    margin-bottom: -6px;
-    background: linear-gradient(0deg, rgba(255, 0, 0, 0.389) 15px, transparent 15px), linear-gradient(90deg, rgba(255, 0, 0, 0.5) 15px, transparent 15px), #FFF;
-    background-size: 10px 10px;
+    margin-bottom: -10px;
+    background: repeating-linear-gradient(45deg, transparent, transparent 5%, rgba(255, 0, 0, 0.389) 5%,
+    rgba(255, 0, 0, 0.389) 10%, transparent 10%, transparent 15%, rgba(255, 0, 0, 0.5) 15%, rgba(255, 0, 0, 0.5) 20%),
+    repeating-linear-gradient(-45deg, transparent, transparent 5%, rgba(255, 0, 0, 0.389) 5%,
+    rgba(255, 0, 0, 0.389) 10%, transparent 10%, transparent 15%, rgba(255, 0, 0, 0.5) 15%, rgba(255, 0, 0, 0.5) 20%);  
+    background-color:#FFF
   }
 
 
@@ -298,6 +301,7 @@
   }
 
   .info {
+    width: 500px;
     display: flex;
     justify-content: center;
     margin-top: 400px;
@@ -305,24 +309,24 @@
   }
   .mesa {
     background-color: saddlebrown;
-    width: 1200px;
-    height: 40px;
+    width: 300px;
+    height: 30px;
   }
 
   .pata {
     background-color: saddlebrown;
-    height: 300px;
-    width: 40px;
+    height: 250px;
+    width: 30px;
   }
 
   .uno {
     position: absolute;
-    margin-left: 1180px;
+    margin-left: 300px;
   }
 
   .dos {
     position: absolute;
-    margin-right: 1180px;
+    margin-right: 300px;
   }
 
 </style>
