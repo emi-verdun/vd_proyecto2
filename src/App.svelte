@@ -63,76 +63,78 @@
   <div class="container">
 
     {#each datos_morfi as sangu}
+      <div class="todo">
+        <!-- Contenedor comida de cada persona -->
+        <div class="comida-container">
+          <div class="mantel"></div>
+          <div class="sanguches">
+            <div class="no_plato">  
+            {#each d3.range(1, 6) as n}
+                {#if n <= [cantDias(sangu.cantDias)]}
 
-      <!-- Contenedor comida de cada persona -->
-      <div class="comida-container">
-        <div class="mantel"></div>
-        <div class="sanguches">
-          <div class="no_plato">  
-          {#each d3.range(1, 6) as n}
-              {#if n <= [cantDias(sangu.cantDias)]}
-
-              <div class="pan">
-                <div class="relleno">
-                  <div class="fill_1"
-                    style="background-color: {colorLugar(sangu.lugar)};
-                    height: 3.5px;
-                    width: 60px;" 
-                  ></div>
-                  <div class="fill_2"
-                    style="background-color: yellow;
-                    height: 3.5px;
-                    width: 60px;" 
-                  ></div>
+                <div class="pan">
+                  <div class="relleno">
+                    <div class="fill_1"
+                      style="background-color: {colorLugar(sangu.lugar)};
+                      height: 3.5px;
+                      width: 60px;" 
+                    ></div>
+                    <div class="fill_2"
+                      style="background-color: yellow;
+                      height: 3.5px;
+                      width: 60px;" 
+                    ></div>
+                  </div>
                 </div>
-              </div>
 
-            {/if} 
-          {/each}
-          </div>
-        
+              {/if} 
+            {/each}
+            </div>
+          
 
-          <div class="plato"
-            style ="display:flex;
-            flex-direction: column;
-            align-items: center">
-            <div 
-              style= "background-color: #bfc0c0;
-              width: {tostadoM1(sangu.tostadoMingo)}px;
-              height: 7px"
-            ></div>
-            <div 
-              style = "background-color: #bfc0c0;
-              width: {tostadoM2(sangu.tostadoMingo)}px;
-              height: 7px"
-            ></div> 
-          </div>
-        </div>
-        
-        <div class="cafe">
-          <div>
-            <div class = "cafe-wrapper">
-              <div class = "cafe-column" style="height:{gasto(sangu.gastoPromedio)}%;"></div>
-              {#if sangu.mejorCafe == 'Havana'}  
-                <img id="img_h" style= "height: 50px" src="./images/cafe_havana2.svg" alt="Café de Havanna">
-              {:else}
-                <img id ="img_f" style = "height: 50px" src="./images/cafe_fud2.svg" alt="Café de Fud">
-              {/if}
+            <div class="plato"
+              style ="display:flex;
+              flex-direction: column;
+              align-items: center">
+              <div 
+                style= "background-color: #bfc0c0;
+                width: {tostadoM1(sangu.tostadoMingo)}px;
+                height: 7px"
+              ></div>
+              <div 
+                style = "background-color: #bfc0c0;
+                width: {tostadoM2(sangu.tostadoMingo)}px;
+                height: 7px"
+              ></div> 
             </div>
           </div>
-        </div>
+          
+          <div class="cafe">
+            <div>
+              <div class = "cafe-wrapper">
+                <div class = "cafe-column" style="height:{gasto(sangu.gastoPromedio)}%;"></div>
+                {#if sangu.mejorCafe == 'Havana'}  
+                  <img id="img_h" style= "height: 50px" src="./images/cafe_havana2.svg" alt="Café de Havanna">
+                {:else}
+                  <img id ="img_f" style = "height: 50px" src="./images/cafe_fud2.svg" alt="Café de Fud">
+                {/if}
+              </div>
+            </div>
+          </div>
 
-        <div class="servicio" style="margin-bottom: {60+(cantDias(sangu.cantDias)*gap)*20}px">
-          {#if 1 == [servicio(sangu.ratingServicio)]}
-            <img style= "height: 30px" src="/images/servicio1.svg" alt="Rating de Servicio = 0-1">
-          {:else if 2 == [servicio(sangu.ratingServicio)]}
-            <img style= "height: 16px" src="/images/servicio2.svg" alt="Rating de Servicio = 2">
-          {:else if 4 == [servicio(sangu.ratingServicio)]}
-            <img style= "height: 30px" src="/images/servicio4.svg" alt="Rating de Servicio = 4">
-          {:else if 5 == [servicio(sangu.ratingServicio)]}
-            <img style= "height: 40px" src="/images/servicio5.svg" alt="Rating de Servicio = 5">
-          {/if}
+          <div class="servicio" style="margin-bottom: {60+(cantDias(sangu.cantDias)*gap)*20}px">
+            {#if 1 == [servicio(sangu.ratingServicio)]}
+              <img style= "height: 30px" src="/images/servicio1.svg" alt="Rating de Servicio = 0-1">
+            {:else if 2 == [servicio(sangu.ratingServicio)]}
+              <img style= "height: 16px" src="/images/servicio2.svg" alt="Rating de Servicio = 2">
+            {:else if 4 == [servicio(sangu.ratingServicio)]}
+              <img style= "height: 30px" src="/images/servicio4.svg" alt="Rating de Servicio = 4">
+            {:else if 5 == [servicio(sangu.ratingServicio)]}
+              <img style= "height: 40px" src="/images/servicio5.svg" alt="Rating de Servicio = 5">
+            {/if}
+          </div>
         </div>
+        <div class="nombre"> <p class="nom_text"> {sangu.nombre} </p> </div>
       </div>
     {/each}
 
@@ -216,11 +218,39 @@
     margin: auto;
     flex-wrap: wrap;
     column-gap: 100px;
-    row-gap: 40px;
-    margin-bottom: 100px;
+    row-gap: 60px;
+    margin-bottom: 150px;
     margin-right: 120px;
     margin-left: 120px;
     /*border:solid 1px red;*/
+  }
+
+  .nombre {
+    display: none;
+    background-color: rgba(243, 243, 243, 0.8);
+    z-index: 3;
+    margin-bottom: -50px;
+    width: max-content;
+  }
+
+  .nom_text {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: sans-serif;
+    margin: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .todo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 180px 0 0;
+    height: 150px;
+    z-index: 1;
   }
 
   .comida-container {
@@ -229,9 +259,15 @@
     justify-content: center;
     align-items: flex-end;
     flex: 180px 0 0;
-    /*border:solid 1px;*/
     height: 150px;
-    /*background-color: grey;*/
+    z-index: 1;
+  }
+
+  .comida-container:hover + .nombre {
+    display: grid;
+    position: absolute;
+	  align-items: center;
+    z-index: 5;
   }
 
   .mantel {
@@ -243,7 +279,8 @@
     rgba(255, 0, 0, 0.389) 10%, transparent 10%, transparent 15%, rgba(255, 0, 0, 0.5) 15%, rgba(255, 0, 0, 0.5) 20%),
     repeating-linear-gradient(-45deg, transparent, transparent 5%, rgba(255, 0, 0, 0.389) 5%,
     rgba(255, 0, 0, 0.389) 10%, transparent 10%, transparent 15%, rgba(255, 0, 0, 0.5) 15%, rgba(255, 0, 0, 0.5) 20%);  
-    background-color:#FFF
+    background-color:#FFF;
+    z-index: 1;
   }
 
 
@@ -252,7 +289,8 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    margin-left: 50px
+    margin-left: 50px;
+    z-index: 2;
   }
 
   .pan {
@@ -270,6 +308,7 @@
   .servicio{
     position: absolute;
     margin-left: 90px;
+    z-index: 2;
    }
 
    .cafe{
@@ -277,6 +316,7 @@
     position: absolute;
     margin-right: 120px;
     margin-bottom: -6px;
+    z-index: 2;
   }
 
    .cafe-wrapper {
