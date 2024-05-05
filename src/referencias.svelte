@@ -218,8 +218,8 @@
     margin-left: 120px;
     width: 1020px;
     height: 1000px;
-    background-color: green;
-    border:solid 5px #9E772A;
+    background-color: rgba(32, 101, 37, 0.8);
+    border:solid 5px rgba(80, 50, 1, 0.8);
   }
   h3{
    font-family: Homemade Apple; 

@@ -147,11 +147,11 @@
 
   </div>
 
-  <div class="info">
+  <!--<div class="info">
     <div class="mesa"></div>
     <div class="pata uno"></div>
     <div class="pata dos"></div>
-  </div>
+  </div>-->
 
 </main>
 
@@ -339,7 +339,7 @@
     z-index: 20;
   }
 
-  .info {
+  /*.info {
     width: 500px;
     display: flex;
     justify-content: center;
@@ -366,6 +366,6 @@
   .dos {
     position: absolute;
     margin-right: 300px;
-  }
+  }*/
 
 </style>
