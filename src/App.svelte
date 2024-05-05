@@ -214,20 +214,18 @@
   .container {
     display: flex;
     flex-direction: row;
-    align-items: end;
-    margin: auto;
+    align-items: flex-end;
     flex-wrap: wrap;
-    column-gap: 100px;
+    column-gap: 120px;
     row-gap: 60px;
     margin-bottom: 150px;
-    margin-right: 120px;
-    margin-left: 120px;
-    /*border:solid 1px red;*/
+    margin-right: 210px;
+    margin-left: 210px;
   }
 
   .nombre {
     display: none;
-    background-color: rgba(243, 243, 243, 0.8);
+    background-color: rgba(243, 243, 243, 0.6);
     z-index: 3;
     margin-bottom: -50px;
     width: max-content;
@@ -244,10 +242,11 @@
   }
 
   .todo {
+    border-color: #FFF;
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-end; /*saco = nombres arriba*/
     flex: 180px 0 0;
     height: 150px;
     z-index: 1;
