@@ -22,128 +22,158 @@
 <main>
   <!-- Contenedor de las entidades -->
   <div class="cont-grande">
-  <div class="container">
-      <h3>Menú</h3>
-      <div class="sanguches_ref">
-          {#each opciones as colores}
-              <div class="no_plato">  
-              {#each colores as n}
-                  <div class="pan">
-                  <div class="relleno">
-                      <div class="fill_1"
-                      style="background-color: {n};
-                      height: 3.5px;
-                      width: 60px;" 
-                      ></div>
-                      <div class="fill_2"
-                      style="background-color: yellow;
-                      height: 3.5px;
-                      width: 60px;" 
-                      ></div>
-                  </div>
-                  </div>
-              {/each}
-              </div>
-          {/each}
-      </div>
-      <div class="platillos">
-          {#each [0,1,2] as i}
-          <div class="plato"
-              style ="display:flex;
-              flex-direction: column;
-              align-items: center; width:120px">
-              <div 
-                  style= "background-color: #bfc0c0;
-                  width: {plato1[i]}px;
-                  height: 7px"
-              ></div>
-              <div 
-                  style = "background-color: #bfc0c0;
-                  width: {plato2[i]}px;
-                  height: 7px"
-              ></div> 
-          </div>
-          {/each}
-      </div>
-      <div class="cafe">
-          <div>
-          <div class = "cafe-wrapper">
-              <div class = "cafe-column" style="height:20%;"></div>
-              <img id ="img_f" style = "height: 50px" src="./images/cafe_fud2.svg" alt="Café de Fud">
-          </div>
-          <img class="fc" style="height: 20px" src="./images/flecha.svg" alt="flechita">
-          <p id="p1">$1500</p>
-          </div>
-          <div>
-          <div class = "cafe-wrapper">
-              <div class = "cafe-column" style="height:90%;"></div>
-              <img id ="img_h" style = "height: 50px" src="./images/cafe_havana2.svg" alt="Café de Hacanna">
-          </div>
-          <img class="fc" style="height: 20px" src="./images/flecha.svg" alt="flechita">
-          <p id="p2">$6000</p>
-          </div>
-      </div>
-      <div class="corchetes">
-          <img src="./images/corchete.svg" alt="corchete" style="height:40px">
+    <div class="pizarra">
+
+      <div class="corcheteContainer">
+        <div class="corchetes">
+          <img src="./images/corchete.svg" alt="corchete" style="height:30px">
           <img src="./images/corchete.svg" alt="corchete" style="height:50px">
           <img src="./images/corchete3.svg" alt="corchete" style="height:70px">
+        </div>
       </div>
-      <div class="frecuencia">
+
+      <div class="frecuenciaContainer">
+        <div class="frecuencia">
           <p id="d_1">1 día</p>
           <p id="d_2">2 días</p>
           <p id="d_3">3 días</p>
+        </div>
       </div>
-      <div class="lineas_long">
-          <img src="./images/corchete.svg" alt="long" style="height: 30px; transform:rotate(-90deg)">
-          <img src="./images/corchete.svg" alt="long" style="height: 80px;transform:rotate(-90deg)">
-          <img src="./images/corchete.svg" alt="long" style="height: 120px;transform:rotate(-90deg)">
-      </div>
-      <div class="parrafos_punt">
+
+      <div class="tostadoContainer">
+        <div class="parrafos_punt">
           {#each [0,1,2] as i}
           <p>{puntuacion[i]}</p>
           {/each}
+        </div>
+        <div class="lineas_long">
+          <img src="./images/corchete.svg" alt="long" style="height: 30px; transform:rotate(-90deg)">
+          <img src="./images/corchete.svg" alt="long" style="height: 80px;transform:rotate(-90deg)">
+          <img src="./images/corchete.svg" alt="long" style="height: 120px;transform:rotate(-90deg)">
+        </div>
       </div>
 
-      <img id="f_f" style="height: 10px" src="./images/flecha.svg" alt="flechita">
-      <img id="f_m" style="height: 10px" src="./images/flecha.svg" alt="flechita">
-      <img id="f_g" style="height: 10px" src="./images/flecha.svg" alt="flechita">
-      <img id="f_r" style="height: 10px" src="./images/flecha.svg" alt="flechita">
-      <img id="f_h" style="height: 10px" src="./images/flecha.svg" alt="flechita">
-      <img id="f_c" style="height: 10px" src="./images/flecha.svg" alt="flechita">
-      <p id="p_f">Fud</p>
-      <p id="p_m">Mingo</p>
-      <p id="p_g">Green Bites</p>
-      <p id="p_r">El Rincon</p>
-      <p id="p_h">Havanna</p>
-      <p id="p_c">Casa</p>
-
-      <div class="preferencia_cafe">
-          <p>Café Fud</p>
-          <p>Café Havanna</p>
+      <div class="flechas">
+        <img id="f_f" style="height: 10px" src="./images/flecha.svg" alt="flechita">
+        <img id="f_m" style="height: 10px" src="./images/flecha.svg" alt="flechita">
+        <img id="f_g" style="height: 10px" src="./images/flecha.svg" alt="flechita">
+        <img id="f_r" style="height: 10px" src="./images/flecha.svg" alt="flechita">
+        <img id="f_h" style="height: 10px" src="./images/flecha.svg" alt="flechita">
+        <img id="f_c" style="height: 10px" src="./images/flecha.svg" alt="flechita">
       </div>
       
-      <div class="servicio">
-          <p style="font-size:20px">0</p>
-          <img style= "height: 30px" src="/images/servicio1.svg" alt="Rating de Servicio = 0-1">
-          <img style= "height: 16px" src="/images/servicio2.svg" alt="Rating de Servicio = 0-1">
-          <div style="height:40px; width:40px"></div>
-          <img style= "height: 30px" src="/images/servicio4.svg" alt="Rating de Servicio = 0-1">
-          <img style= "height: 40px" src="/images/servicio5.svg" alt="Rating de Servicio = 0-1">
-          <p style="font-size:20px">5</p>
-      </div>
-      <p style="position:relative; bottom:300px; right:290px; font-size:23px">Calidad del servicio</p>
-  
-      <div class="cont-ref">
-          <p class="referencias" id="titulo-ref">Referencias</p>
-          <p class="referencias"><u>Cantidad de Sandwiches</u>:  Días que se come en la facultad</p>
-          <p class="referencias"><u>Relleno de Sandwiches</u>:  Preferencia de comida de tal lugar</p>
-          <p class="referencias"><u>Longitud del plato</u>:  Rating del tostado de Mingo</p>
-          <p class="referencias"><u>Mosquinha o brillitos</u>:  Calidad del servicio del lugar elegido</p>
-          <p class="referencias"><u>Color Vaso Café</u>:  Preferencia de café de tal lugar</p>
-          <p class="referencias"><u>Relleno vaso</u>:  Gasto promedio en comida</p>
+      <div class="lugares">
+        <p id="p_f">Fud</p>
+        <p id="p_m">Mingo</p>
+        <p id="p_g">Green Bites</p>
+        <p id="p_r">El Rincon</p>
+        <p id="p_h">Havanna</p>
+        <p id="p_c">Casa</p>
       </div>
 
-  </div>
+      <div class="container">
+
+        <h3>Menú</h3>
+
+        <div class="sang_pla">
+          <div class="sanguches_ref">
+              {#each opciones as colores}
+                  <div class="no_plato">  
+                  {#each colores as n}
+                      <div class="pan">
+                      <div class="relleno">
+                          <div class="fill_1"
+                          style="background-color: {n};
+                          height: 3.5px;
+                          width: 60px;" 
+                          ></div>
+                          <div class="fill_2"
+                          style="background-color: yellow;
+                          height: 3.5px;
+                          width: 60px;" 
+                          ></div>
+                      </div>
+                      </div>
+                  {/each}
+                  </div>
+              {/each}
+          </div>
+
+          <div class="platillos">
+              {#each [0,1,2] as i}
+              <div class="plato"
+                  style ="display:flex;
+                  flex-direction: column;
+                  align-items: center; width:120px">
+                  <div 
+                      style= "background-color: #bfc0c0;
+                      width: {plato1[i]}px;
+                      height: 7px"
+                  ></div>
+                  <div 
+                      style = "background-color: #bfc0c0;
+                      width: {plato2[i]}px;
+                      height: 7px"
+                  ></div> 
+              </div>
+              {/each}
+          </div>
+      
+        </div>
+
+        <div class="cafeContainer">
+          <div class="preferencia_cafe">
+            <p>Café Fud</p>
+            <p>Café Havanna</p>
+          </div>
+          <div class="cafe">
+              <div>
+                <div class = "cafe-wrapper">
+                    <div class = "cafe-column" style="height:20%;"></div>
+                    <img id ="img_f" style = "height: 50px" src="./images/cafe_fud2.svg" alt="Café de Fud">
+                </div>
+                <img class="fc" style="height: 20px" src="./images/flecha.svg" alt="flechita">
+                <p id="p1">$1500</p>
+                </div>
+                <div>
+                <div class = "cafe-wrapper">
+                    <div class = "cafe-column" style="height:90%;"></div>
+                    <img id ="img_h" style = "height: 50px" src="./images/cafe_havana2.svg" alt="Café de Hacanna">
+                </div>
+                <img class="fc" style="height: 20px" src="./images/flecha.svg" alt="flechita">
+                <p id="p2">$6000</p>
+              </div>
+          </div>
+        </div>
+        
+        
+
+        <div class="serv">
+          <p style="font-size:23px; margin-bottom:40px">Calidad del servicio</p>
+          <div class="servicio">
+            <p style="font-size:20px">0</p>
+            <img style= "height: 30px" src="/images/servicio1.svg" alt="Rating de Servicio = 0-1">
+            <img style= "height: 16px" src="/images/servicio2.svg" alt="Rating de Servicio = 0-1">
+            <div style="height:40px; width:40px"></div>
+            <img style= "height: 30px" src="/images/servicio4.svg" alt="Rating de Servicio = 0-1">
+            <img style= "height: 40px" src="/images/servicio5.svg" alt="Rating de Servicio = 0-1">
+            <p style="font-size:20px">5</p>
+          </div>
+        </div>
+        
+  
+        <div class="cont-ref">
+            <p class="referencias" id="titulo-ref">Referencias</p>
+            <p class="referencias"> <br><br><br><br><br><br><br><br><br><br><br><br><br> <u>Cantidad de Sandwiches</u>:  Días que se come en la facultad</p>
+            <p class="referencias"> <br><br><br><br><br> <u>Relleno de Sandwiches</u>:  Preferencia de comida de tal lugar</p>
+            <p class="referencias"> <br><br><br><br><br> <u>Longitud del plato</u>:  Rating del tostado de Mingo</p>
+            <p class="referencias"> <br><br><br><br><br> <u>Mosquinha o brillitos</u>:  Calidad del servicio del lugar elegido</p>
+            <p class="referencias"> <br><br><br><br><br> <u>Color Vaso Café</u>:  Preferencia de café de tal lugar</p>
+            <p class="referencias"> <br><br><br><br><br> <u>Relleno vaso</u>:  Gasto promedio en comida</p>
+        </div> 
+
+      </div>
+    </div>
   </div>
 </main>
 
@@ -151,18 +181,47 @@
   .cont-grande{
       display:flex;
       justify-content: center;
+      margin-bottom: 80px;
+  }
+  .pizarra{
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    height: 1100px;
+    background-color: rgba(35, 107, 36, 0.8);
+    border:solid 5px rgba(143, 95, 12, 0.8);
+    position: relative;
   }
   .container{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: start;
-      flex-wrap: wrap;
-      position:relative;
-      width: 1020px;
-      height: 1000px;
-      background-color: green;
-      border:solid 5px #9E772A;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 1000px;
+  }
+
+
+  h3{
+   font-family: Homemade Apple; 
+   font-size: 40px; 
+   color: white; 
+   width: 100%;
+   text-align: center;
+  }
+
+
+  .sang_pla{
+    position: relative;
+    margin-bottom: 130px;
+  }
+  .sanguches_ref{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    position:relative;
+    column-gap: 240px;
   }
   .pan {
     background-color: #f3efc7;
@@ -175,49 +234,94 @@
     border-width: 1px;
     border-color: #f7c871
   }
-
-  
-  .sanguches_ref{
-    display: flex;
-    align-items: end;
-    position:relative;
-    top:160px;
-    right:50px;
-    column-gap: 240px;
-  }
-
   .platillos{
     display: flex;
     align-items: end;
     position:relative;
+    justify-content: center;
     column-gap: 182px;
-    top: 64px;
-    left:8px;
-  }
-  
-  h3{
-   font-family: Homemade Apple; 
-   font-size: 40px; 
-   color: white; 
-   position:relative;
-   left:350px;
   }
 
-  .servicio{
+  .corcheteContainer{
+    position: absolute;
+    top: 17.5%;
+    left: 17%;
+  }
+  .corchetes{
+    display: flex;
+    align-items: end;
+    column-gap: 290px;
+    position: relative;
+  }
+  .frecuenciaContainer{
+    position: absolute;
+    top: 19%;
+    left: 13%;
+  }
+  .frecuencia{
     display:flex;
-    column-gap: 60px;
+    column-gap: 250px;
     position:relative;
-    bottom:220px;
-    left: 80px
   }
+  .tostadoContainer{
+    position: absolute;
+    width: 100%;
+    margin-top: 2px;
+    top: 24%;
+    left: 8.5%;
+  }
+  .parrafos_punt{
+    display:flex;
+    margin-top: 20px;
+    column-gap: 160px;
+    left: 60px;
+    position:relative;
+  }
+  .lineas_long{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 290px;
+    position: absolute;
+    bottom: 5px;
+    left: 125px;
+  }
+  .flechas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:24%;
+    left: 9%;
+  }
+  .lugares{
+    position: absolute;
+  }
+  #f_f{position:relative; left:152px; bottom: 25px}
+  #f_m{position:relative; left:715px; bottom:50px;}
+  #f_g{position:relative; left:373px; bottom:25px}
+  #f_r{position:relative; left:635px; bottom:70px}
+  #f_h{position:relative; left:292px; bottom:50px;}
+  #f_c{position:relative; left:555px; bottom:25px;}
+  
+  #p_f{position:relative; top:215px; right:205px;}
+  #p_m{position:relative; top:135px; left:112px}
+  #p_g{position:relative; top:115px; left:130px}
+  #p_r{position:relative; top:15px;left:425px}
+  #p_h{position:relative; bottom:10px;left:420px}
+  #p_c{position:relative; bottom: 35px; left:405px}
 
+
+  .cafeContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
   .cafe{
     display:flex;
-    position: absolute;
-    margin-top: 650px;
+    position: relative;
     column-gap: 200px;
   }
-
   .cafe-wrapper {
     position: relative;
     width: 42.5px;
@@ -233,86 +337,53 @@
     background-color: #2F1D12;
     z-index: 1;
   }
-
   #img_h, #img_f {
     position:absolute;
     z-index: 20;
   }
-
-  .preferencia_cafe{
-    display:flex;
-    column-gap: 170px;
-    position:relative;
-    top: 75px;
-    right: 160px;
-  }
-  
   .fc{
     position:relative;
     left:20px;
     bottom:18px;   
     z-index: 10;
   }
-
   #p1,#p2{
     position:relative;
     bottom:75px;
     left:83px;
     font-size:22px;
   }
-
-
-  .corchetes{
-    display: flex;
-    align-items: end;
-    column-gap: 295px;
-    position: relative;
-    right: 30px;
-    top:-40px;
-  }
-  .frecuencia{
+  .preferencia_cafe{
     display:flex;
-    column-gap: 260px;
-    position:relative;
-    right:60px;
-    bottom:120px;
+    column-gap: 180px;
+    position:absolute;
+    bottom: 40px;
+    width: 100%;
+    justify-content: center;
+    margin-right: 20px;
   }
-  .lineas_long{
+  
+
+  .serv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 40px;
+ }
+  .servicio{
     display:flex;
     flex-direction: row;
-    align-items: center;
-    column-gap: 290px;
-    position: relative;
-    top:-190px;
-    left:12px
-  }
-  .parrafos_punt{
-    display:flex;
-    column-gap: 160px;
+    justify-content: center;
+    column-gap: 60px;
     position:relative;
-    left: 130px;
-    bottom:285px;
   }
-
-  #f_f{position:relative;right:505px; bottom: 310px}
-  #f_m{position:relative;right:240px; bottom:335px;}
-  #f_g{position:relative;right:280px; bottom:310px}
-  #f_r{position:relative;right:10px; bottom:360px}
-  #f_h{position:relative;right:45px; bottom:335px;}
-  #f_c{position:relative;right:80px; bottom:310px;}
-
-  #p_f{position:relative; bottom:340px;right:680px;}
-  #p_m{position:relative; bottom:460px; left:410px;}
-  #p_g{position:relative; bottom:430px; left:360px;}
-  #p_r{position:relative; bottom:490px; left:580px;}
-  #p_h{position:relative; bottom:460px; left:505px;}
-  #p_c{position:relative; bottom:430px; left:440px;}
 
 
   .cont-ref{
     position:relative;
-    bottom:0px;
-    right:200px
+    width: 100%;
+    margin-top: 40px;
   }
   .referencias{
     text-align: start;
@@ -329,9 +400,5 @@
     color:white;
     text-align: center;
   }
-
-
-
-
 
 </style>
