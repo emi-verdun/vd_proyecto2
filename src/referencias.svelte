@@ -149,7 +149,7 @@
         
 
         <div class="serv">
-          <p style="font-size:23px; margin-bottom:40px">Calidad del servicio</p>
+          <p style="font-size:23px; margin-bottom:25px">Calidad del servicio</p>
           <div class="servicio">
             <p style="font-size:20px">0</p>
             <img style= "height: 30px" src="/images/servicio1.svg" alt="Rating de Servicio = 0-1">
@@ -179,10 +179,9 @@
 
 <style>
   .cont-grande{
-      display:flex;
-      justify-content: center;
-      margin-bottom: 80px;
-  }
+    display:flex;
+    justify-content: center;
+}
   .pizarra{
     display: flex;
     justify-content: center;
@@ -193,7 +192,6 @@
     position: relative;
   }
   .container{
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -244,7 +242,7 @@
 
   .corcheteContainer{
     position: absolute;
-    top: 17.5%;
+    top: 15.5%;
     left: 17%;
   }
   .corchetes{
@@ -255,7 +253,7 @@
   }
   .frecuenciaContainer{
     position: absolute;
-    top: 19%;
+    top: 17%;
     left: 13%;
   }
   .frecuencia{
@@ -267,7 +265,7 @@
     position: absolute;
     width: 100%;
     margin-top: 2px;
-    top: 24%;
+    top: 22%;
     left: 8.5%;
   }
   .parrafos_punt{
@@ -296,19 +294,19 @@
   .lugares{
     position: absolute;
   }
-  #f_f{position:relative; left:152px; bottom: 25px}
-  #f_m{position:relative; left:715px; bottom:50px;}
-  #f_g{position:relative; left:373px; bottom:25px}
-  #f_r{position:relative; left:635px; bottom:70px}
-  #f_h{position:relative; left:292px; bottom:50px;}
-  #f_c{position:relative; left:555px; bottom:25px;}
+  #f_f{position:relative; left:152px; bottom: 45px}
+  #f_m{position:relative; left:715px; bottom:65px;}
+  #f_g{position:relative; left:373px; bottom:45px}
+  #f_r{position:relative; left:635px; bottom:85px}
+  #f_h{position:relative; left:292px; bottom:65px;}
+  #f_c{position:relative; left:555px; bottom:45px;}
   
-  #p_f{position:relative; top:215px; right:205px;}
-  #p_m{position:relative; top:135px; left:112px}
-  #p_g{position:relative; top:115px; left:130px}
-  #p_r{position:relative; top:15px;left:425px}
-  #p_h{position:relative; bottom:10px;left:420px}
-  #p_c{position:relative; bottom: 35px; left:405px}
+  #p_f{position:relative; top:195px; right:200px;}
+  #p_m{position:relative; top:120px; left:112px}
+  #p_g{position:relative; top:100px; left:130px}
+  #p_r{position:relative; top:0px;left:425px}
+  #p_h{position:relative; bottom:25px;left:420px}
+  #p_c{position:relative; bottom:50px; left:405px}
 
 
   .cafeContainer{
@@ -370,6 +368,7 @@
   justify-content: center;
   position: relative;
   margin-bottom: 40px;
+  margin-top: -10px;
  }
   .servicio{
     display:flex;
