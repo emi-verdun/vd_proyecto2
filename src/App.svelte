@@ -147,13 +147,20 @@
 
   </div>
 
-  <!--<div class="info">
-    <div class="mesa"></div>
-    <div class="pata uno"></div>
-    <div class="pata dos"></div>
-  </div>-->
-
 </main>
+
+<footer class="footer">
+  <div class="text_ft">
+    <p class="text"> by Maru y Emi</p>
+  </div>
+  <div class="contenido">
+    <div class="links">
+      <a href="https://github.com/emi-verdun/vd_proyecto2" target="_blank"><img src="./public/images/github-mark-white.png" alt="logo github" style="width: 50px; height:50px; margin-right:10px"></a>
+      <a href="https://www.figma.com/design/PJKDFxw6OxdUhHQPw3vxXf/Presentacion-VD?node-id=0%3A1&t=VZAbxec0ld5lxipf-1" target="_blank"><img src="./public/images/figma-circle.png" alt="logo github" style="width: 50px; height:50px"></a>
+    </div>
+    <div><p id="link"> LINKS DEL PROYECTO </p></div>
+  </div>
+</footer>
 
 
 <style>
@@ -170,7 +177,6 @@
   z-index: 0;
   background: linear-gradient(0deg, rgba(255, 0, 0, 0.389) 15px, transparent 15px), linear-gradient(90deg, rgba(255, 0, 0, 0.5) 15px, transparent 15px), #FFF;
   background-size: 35px 35px;
-    
   }
   
   .header2 {
@@ -339,33 +345,45 @@
     z-index: 20;
   }
 
-  /*.info {
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    margin-top: 400px;
-    margin-bottom: 350px;
-  }
-  .mesa {
-    background-color: saddlebrown;
-    width: 300px;
-    height: 30px;
-  }
-
-  .pata {
-    background-color: saddlebrown;
-    height: 250px;
-    width: 30px;
-  }
-
-  .uno {
-    position: absolute;
-    margin-left: 300px;
-  }
-
-  .dos {
-    position: absolute;
-    margin-right: 300px;
-  }*/
+  .footer{
+  display: flex;
+  flex-direction: row;
+  column-gap: 1000px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: -10px;
+  margin-left: -10px;
+  padding-right: 18px;
+  height: 100px;
+  background-color:rgba(32, 32, 32, 0.8);
+}
+.text_ft{
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  height: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.text{
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: bold 700;
+  text-align: center;
+}
+#link{
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: white;
+}
+.contenido{
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+}
 
 </style>

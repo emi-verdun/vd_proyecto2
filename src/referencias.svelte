@@ -177,6 +177,7 @@
   </div>
 </main>
 
+
 <style>
   .cont-grande{
     display:flex;
@@ -187,7 +188,7 @@
     justify-content: center;
     width: 1000px;
     height: 1100px;
-    background-color: rgba(35, 107, 36, 0.8);
+    background-color: rgba(57, 107, 54, 0.8);
     border:solid 5px rgba(143, 95, 12, 0.8);
     position: relative;
   }
@@ -287,7 +288,7 @@
   .flechas{
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 40%;
     top:24%;
     left: 9%;
   }
@@ -386,7 +387,8 @@
   }
   .referencias{
     text-align: start;
-    line-height: .8px;
+    line-height: .9px;
+    font-family:cursive;
   }
   #titulo-ref{
     font-size:22px;
