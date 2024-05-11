@@ -4,7 +4,7 @@
 
     
   let colores1 = ["#458330"]
-  let colores2 = ["#ff8c8c","#7A1F3D"]
+  let colores2 = ["#ff8c8c","#FF814A"]
   let colores3 = ["#71372a", "#ffc700", "#ff2f48"]
   let opciones = [colores1, colores2, colores3]
 
