@@ -155,8 +155,8 @@
   </div>
   <div class="contenido">
     <div class="links">
-      <a href="https://github.com/emi-verdun/vd_proyecto2" target="_blank"><img src="./public/images/github.svg" alt="logo github" style="width: 45px; height:45px; margin-right:15px"></a>
-      <a href="https://www.figma.com/design/PJKDFxw6OxdUhHQPw3vxXf/Presentacion-VD?node-id=0%3A1&t=VZAbxec0ld5lxipf-1" target="_blank"><img src="./public/images/figma.svg" alt="logo figma" style="width: 45px; height:45px"></a>
+      <a href="https://github.com/emi-verdun/vd_proyecto2" target="_blank"><img src="/public/images/github.svg" alt="logo github" style="width: 45px; height:45px; margin-right:15px"></a>
+      <a href="https://www.figma.com/design/PJKDFxw6OxdUhHQPw3vxXf/Presentacion-VD?node-id=0%3A1&t=VZAbxec0ld5lxipf-1" target="_blank"><img src="/public/images/figma.svg" alt="logo figma" style="width: 45px; height:45px"></a>
     </div>
     <div><p id="link"> LINKS DEL PROYECTO </p></div>
   </div>
